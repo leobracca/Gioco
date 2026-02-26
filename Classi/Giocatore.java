@@ -4,19 +4,10 @@ import java.util.*;
 public class Giocatore {
     ArrayList<Personaggio> personaggi = new ArrayList<>();
     String nome;
-    int vita = 100;
 
     public Giocatore(String nome) {
         this.nome = nome;
     }
-
-    void setVita(int danni) {
-        this.vita -= danni;
-    }
-
-    int getVita() {
-        return vita;
-    } 
 
     String getNome() {
         return nome;
@@ -29,7 +20,7 @@ public class Giocatore {
 
     void stampaPersonaggi(){
         for(Personaggio p : personaggi){
-            System.out.println(p.getNome() + " " + p.getDanno());
+            System.out.println(p.getNome() + " " + p.getVita());
         }
     }
 }

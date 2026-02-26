@@ -2,18 +2,18 @@ package Gioco.Classi;
 
 public class Personaggio {
     String nome;
-    int danno;
+    int vita;
 
-    public Personaggio(String nome, int danno) {
+    public Personaggio(String nome, int vita) {
         this.nome = nome;
-        this.danno = danno;
+        this.vita = vita;
     }
 
      String getNome() {
         return nome;
     }
 
-     int getDanno() {
-        return danno;
+     int getVita() {
+        return vita;
     }
 }

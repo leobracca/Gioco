@@ -7,6 +7,11 @@ public class Gestore {
     int danni = 0;
     int round = 0;
 
+    void impostaGioco(){
+        addGiocatore();
+        addInput();
+    }
+
     void addGiocatore(){
         Giocatore g1 = new Giocatore("Luca");
         Giocatore g2 = new Giocatore("Mario");
@@ -14,12 +19,10 @@ public class Gestore {
         giocatori.add(g2);
     }
 
-    //Assegna i personaggi solo a 1 giocatore
-    void assegnaPersonaggi(String[] personaggi, int c){
-        for(int i = 0; i < giocatori.size(); i++){
-            if(i == c){
-                giocatori.get(i).assegnaPersonaggio(personaggi);
-            }
+    void addInput(){
+        InputManager im = new InputManager();       
+        for(Giocatore g : giocatori){
+            im.addPersonaggio(g);
         }
     }
 
