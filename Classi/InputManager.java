@@ -1,16 +1,15 @@
 package Gioco.Classi;
 import java.util.*;
 
-public class InputManager {
+ class InputManager {
     Scanner sc = new Scanner(System.in);
 
-    String[] addPersonaggio(Giocatore g){
+    String[] addPersonaggio(Giocatore g, List<Personaggio> allPersonaggi){
         
         System.out.println("Personaggio giocatore " + g.getNome());
         String nome = sc.nextLine();
 
         String[] personaggi = {nome};       
-        g.assegnaPersonaggio(personaggi);
 
         return personaggi;
     }

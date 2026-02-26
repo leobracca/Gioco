@@ -1,10 +1,10 @@
 package Gioco.Classi;
 
-public class Personaggio {
+ class Personaggio {
     String nome;
     int vita;
 
-    public Personaggio(String nome, int vita) {
+     Personaggio(String nome, int vita) {
         this.nome = nome;
         this.vita = vita;
     }

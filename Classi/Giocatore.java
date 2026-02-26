@@ -1,11 +1,12 @@
 package Gioco.Classi;
 import java.util.*;
 
-public class Giocatore {
+ class Giocatore {
     ArrayList<Personaggio> personaggi = new ArrayList<>();
     String nome;
+    boolean elimina = false;
 
-    public Giocatore(String nome) {
+     Giocatore(String nome) {
         this.nome = nome;
     }
 
@@ -13,9 +14,18 @@ public class Giocatore {
         return nome;
     }
 
-    void assegnaPersonaggio(String[] p){
-        FileManager fm = new FileManager();
-        fm.leggiFile(personaggi, Arrays.asList(p));
+    ArrayList<Personaggio> getPersonaggi() {
+        return personaggi;
+    }
+
+    void assegnaPersonaggio(String[] p, ArrayList<Personaggio> allPersonaggi){    //Metodo assegnaPersonaggio si trova in Gestore
+        for(String nome: p){
+            for(Personaggio pers : allPersonaggi){
+                if(pers.getNome().equals(nome)){
+                    personaggi.add(pers);
+                }
+            }
+        }
     }
 
     void stampaPersonaggi(){

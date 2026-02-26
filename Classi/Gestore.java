@@ -1,8 +1,10 @@
 package Gioco.Classi;
 import java.util.*;
 
-public class Gestore {
+ class Gestore {
     ArrayList<Giocatore> giocatori = new ArrayList<>();
+    ArrayList<Personaggio> allPersonaggi = new ArrayList<>();
+    String[] personaggi = {};
     Random rand = new Random();
     int danni = 0;
     int round = 0;
@@ -22,8 +24,16 @@ public class Gestore {
     void addInput(){
         InputManager im = new InputManager();       
         for(Giocatore g : giocatori){
-            im.addPersonaggio(g);
+            personaggi = im.addPersonaggio(g, allPersonaggi);
+            filePersonaggi();
+            g.assegnaPersonaggio(personaggi, allPersonaggi);
+            allPersonaggi.clear();
         }
+    }
+
+    void filePersonaggi(){
+        FileManager fm = new FileManager();
+        allPersonaggi = fm.leggiPersonaggi(allPersonaggi);         
     }
 
     void stampaPers(){
