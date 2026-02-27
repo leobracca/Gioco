@@ -22,11 +22,13 @@ import java.util.*;
         return personaggi.get(0).getDanni();
     }
 
+    /** Aggiorna la vita del personaggio combattente */
     void setVitaPersonaggio(int danni){
         personaggi.get(0).setVita(danni);
     }
 
-    void assegnaPersonaggio(String[] p, ArrayList<Personaggio> allPersonaggi){    //Metodo assegnaPersonaggio si trova in Gestore
+    /** Aggiunge i personaggi scelti ai giocatori */
+    void assegnaPersonaggio(String[] p, ArrayList<Personaggio> allPersonaggi){
         for(String nome: p){
             for(Personaggio pers : allPersonaggi){
                 if(pers.getNome().equals(nome)){
@@ -35,7 +37,7 @@ import java.util.*;
             }
         }
     }
-
+    /** Stampa i personaggi */
     void stampaPersonaggi(){
         for(Personaggio p : personaggi){
             System.out.println("Nome: " + p.getNome() + " vita: " + p.getVita() + " danni: " + p.getDanni());
