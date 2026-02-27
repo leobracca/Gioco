@@ -5,10 +5,9 @@ import java.util.*;
     ArrayList<Giocatore> giocatori = new ArrayList<>();
     ArrayList<Personaggio> allPersonaggi = new ArrayList<>();
     String[] personaggi = {};
-    Random rand = new Random();
     InputManager im = new InputManager();
     FileManager fm = new FileManager();
-    int round = 0;
+    int round = 1;
 
     void impostaGioco(){
         addGiocatore();
@@ -36,33 +35,31 @@ import java.util.*;
         }
     }
 
-    void stampaPers(){
+    void stampaStatus(){
         for(Giocatore g : giocatori){
             System.out.println("Giocatore: " + g.getNome());
             g.stampaPersonaggi();
         }
     }
 
-
-    /* 
     void iniziaGioco(){
         while(giocatori.size() > 1){
-            for(int i = 0; i < giocatori.size(); i++){
-                Giocatore g = giocatori.get(i); 
-                round++;
-                danni = rand.nextInt(20);
-                g.setVita(danni);
+            if(giocatori.size() > 1){
+                for(int i = 0; i < giocatori.size(); i++) {
+                    int attaccante = i;
+                    int difensore = (i + 1) % giocatori.size();
 
-                checkVincitore(i);
-            }
+                    int danni = giocatori.get(attaccante).combatti();
+                    giocatori.get(difensore).setVitaPersonaggio(danni);
+                    checkVincitore(difensore);
+                }
+
+                round++;
+            }    
         }
     }
 
     void checkVincitore(int i){
-        if(giocatori.get(i).getVita() <= 0){
-            System.out.println("Il giocatore " + giocatori.get(i).getNome() + " è morto!");
-            giocatori.remove(i);
-        }
+        
     }
-    */
 }

@@ -18,6 +18,14 @@ import java.util.*;
         return personaggi;
     }
 
+    int combatti(){
+        return personaggi.get(0).getDanni();
+    }
+
+    void setVitaPersonaggio(int danni){
+        personaggi.get(0).setVita(danni);
+    }
+
     void assegnaPersonaggio(String[] p, ArrayList<Personaggio> allPersonaggi){    //Metodo assegnaPersonaggio si trova in Gestore
         for(String nome: p){
             for(Personaggio pers : allPersonaggi){

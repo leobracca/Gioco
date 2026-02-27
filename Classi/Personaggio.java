@@ -22,4 +22,8 @@ package Gioco.Classi;
     int getDanni(){
         return danni;
     }
+
+    void setVita(int danniRicevuti){
+        vita -= danniRicevuti;
+    }
 }
