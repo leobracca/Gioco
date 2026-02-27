@@ -8,7 +8,6 @@ import java.util.*;
     Random rand = new Random();
     InputManager im = new InputManager();
     FileManager fm = new FileManager();
-    int danni = 0;
     int round = 0;
 
     void impostaGioco(){
@@ -18,10 +17,12 @@ import java.util.*;
     }
 
     void addGiocatore() {
-        Giocatore g1 = new Giocatore("Luca");
-        Giocatore g2 = new Giocatore("Mario");
-        giocatori.add(g1);
-        giocatori.add(g2);
+        String nome;
+        for(int i = 0; i < 2; i++){
+            nome = im.scegliNome();
+            Giocatore g = new Giocatore(nome);
+            giocatori.add(g);
+        }
     }
 
     void caricaPersonaggi(){
@@ -30,7 +31,7 @@ import java.util.*;
 
     void sistemazionePersonaggi(){
         for(Giocatore g : giocatori){
-            personaggi = im.addPersonaggio(g, allPersonaggi);
+            personaggi = im.scegliPersonaggio(g, allPersonaggi);
             g.assegnaPersonaggio(personaggi, allPersonaggi);   
         }
     }

@@ -4,7 +4,7 @@ import java.util.*;
  class InputManager {
     Scanner sc = new Scanner(System.in);
 
-    String[] addPersonaggio(Giocatore g, List<Personaggio> allPersonaggi){
+    String[] scegliPersonaggio(Giocatore g, List<Personaggio> allPersonaggi){
         
         System.out.println("Personaggio giocatore " + g.getNome());
         String nome = sc.nextLine();
@@ -12,6 +12,13 @@ import java.util.*;
         String[] personaggi = {nome};       
 
         return personaggi;
+    }
+
+    String scegliNome(){
+        String nome;
+        System.out.println("Come si chiama il giocatore");
+        nome = sc.nextLine();
+        return nome;
     }
 
     void chiudiScanner(){
