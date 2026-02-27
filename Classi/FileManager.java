@@ -11,7 +11,7 @@ import java.util.*;
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] colonna = line.split(",");
-                Personaggio pers = new Personaggio(colonna[0], Integer.parseInt(colonna[1]));
+                Personaggio pers = new Personaggio(colonna[0], Integer.parseInt(colonna[1]), Integer.parseInt(colonna[2]));
                 personaggi.add(pers);
             }
         }

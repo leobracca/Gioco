@@ -30,7 +30,7 @@ import java.util.*;
 
     void stampaPersonaggi(){
         for(Personaggio p : personaggi){
-            System.out.println(p.getNome() + " " + p.getVita());
+            System.out.println("Nome: " + p.getNome() + " vita: " + p.getVita() + " danni: " + p.getDanni());
         }
     }
 }

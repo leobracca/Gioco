@@ -1,3 +1,18 @@
-Nome,Vita
-Moschettiere,100
-Cavaliere,120
+Nome,Vita,Danni
+Moschettiere,100,30
+Cavaliere,120,20
+Arcieri,80,25
+Goblin,90,20
+Sgherri,80,15
+Gigante,150,40
+Vachiria,130,35
+Stregone,110,30
+Domatore di cinghiali,120,25
+Principe,140,35
+Bocciatore,100,25
+Guardie,110,20
+Cacciatore,90,25
+Principessa,80,15
+Minatore,100,20
+Fenice,130,25
+Pescatore,90,40
