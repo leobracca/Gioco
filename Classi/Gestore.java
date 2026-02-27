@@ -6,34 +6,33 @@ import java.util.*;
     ArrayList<Personaggio> allPersonaggi = new ArrayList<>();
     String[] personaggi = {};
     Random rand = new Random();
+    InputManager im = new InputManager();
+    FileManager fm = new FileManager();
     int danni = 0;
     int round = 0;
 
     void impostaGioco(){
         addGiocatore();
-        addInput();
+        caricaPersonaggi();
+        sistemazionePersonaggi();
     }
 
-    void addGiocatore(){
+    void addGiocatore() {
         Giocatore g1 = new Giocatore("Luca");
         Giocatore g2 = new Giocatore("Mario");
         giocatori.add(g1);
         giocatori.add(g2);
     }
 
-    void addInput(){
-        InputManager im = new InputManager();       
-        for(Giocatore g : giocatori){
-            personaggi = im.addPersonaggio(g, allPersonaggi);
-            filePersonaggi();
-            g.assegnaPersonaggio(personaggi, allPersonaggi);
-            allPersonaggi.clear();
-        }
+    void caricaPersonaggi(){
+        allPersonaggi = fm.leggiPersonaggi(allPersonaggi);
     }
 
-    void filePersonaggi(){
-        FileManager fm = new FileManager();
-        allPersonaggi = fm.leggiPersonaggi(allPersonaggi);         
+    void sistemazionePersonaggi(){
+        for(Giocatore g : giocatori){
+            personaggi = im.addPersonaggio(g, allPersonaggi);
+            g.assegnaPersonaggio(personaggi, allPersonaggi);   
+        }
     }
 
     void stampaPers(){
