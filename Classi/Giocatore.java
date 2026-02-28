@@ -37,6 +37,13 @@ import java.util.*;
             }
         }
     }
+
+    void checkPersonaggi(){
+        if(personaggi.get(0).getVita() <= 0){
+            personaggi.remove(0);
+        }
+    }
+
     /** Stampa i personaggi */
     void stampaPersonaggi(){
         for(Personaggio p : personaggi){
