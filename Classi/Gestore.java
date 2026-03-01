@@ -4,7 +4,7 @@ import java.util.*;
  class Gestore {
     ArrayList<Giocatore> giocatori = new ArrayList<>();
     ArrayList<Personaggio> allPersonaggi = new ArrayList<>();
-    String[] personaggi = {};
+    String[] personaggi = new String[3];
     InputManager im = new InputManager();
     FileManager fm = new FileManager();
     int round = 1;
