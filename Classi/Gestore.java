@@ -67,10 +67,12 @@ import java.util.*;
      * Stampa lo status dei giocatori, il nome e la lista dei personaggi
     */
     void stampaStatus(){
+        System.out.println();
         System.out.println("Round: " + round);
         for(Giocatore g : giocatori){
             System.out.println("Giocatore: " + g.getNome());
             g.stampaPersonaggi();
+            System.out.println();
         }
     }
 
@@ -118,10 +120,11 @@ import java.util.*;
     */
     void checkVincitore(int difensore, int attaccante){
         if(giocatori.get(difensore).getPersonaggi() == null || giocatori.get(difensore).getPersonaggi().isEmpty()){
+            System.out.println();
+            System.out.println("Risultato finale:");
             System.out.println("Il giocatore " + giocatori.get(difensore).getNome() + " non ha più personaggi e viene eliminato dal gioco.");
             System.out.println("Vince: " + giocatori.get(attaccante).getNome());
             giocatori.remove(difensore);
-            stampaStatus();
         }
     }
 }
