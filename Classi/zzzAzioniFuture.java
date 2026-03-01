@@ -2,8 +2,15 @@ package Gioco.Classi;
 
  class zzzAzioniFuture {
     /**
-     * 1. Far scegliere a ogni giocatore 3 personaggi
-     * 2. Aggiungere un file che contenga le abilità di ogni personaggio
+     * 1. Guardare se tutti i personaggi rispondono alle azioni senza problemi
+     * 2. Aggiungere il punteggio dei giocatori
+     *      Se si sconfigge un personaggio si incrementa il punteggio del giocatore di 1
+     * 3. Aggiungere un file dove abbiamo una match history della partita
+     *      Dire i nomi del giocatore
+     *      Dire i nomi dei personaggi
+     *      Dire il risultato della partita
+     * 4. Scegliere che personaggio usare da input
+     * 5. Aggiungere un file che contenga le abilità di ogni personaggio
      *      Nel file Personaggi.csv aggiungere una nuova colonna con tutti i nomi delle abilità
      *      Creazione nuovo file Abilità.csv dove mettere il nome dell'abilità e i vari effetti
      */
