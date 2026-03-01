@@ -84,13 +84,13 @@ import java.util.*;
     */
     void iniziaGioco() {
         while (giocatori.size() > 1) {
+            stampaStatus();
             eseguiAttacco(0, 1);
 
             if (giocatori.size() > 1) {
                 eseguiAttacco(1, 0);
             }
 
-            stampaStatus();
             round++;
         }
     }
@@ -114,12 +114,14 @@ import java.util.*;
      * 
      * Controlla se l'arrayList del difensore risulta vuoto oppure null,
      * in casi affermativo toglie il giocatore dal gioco e ha perso, proclamando il vincitore
+     * e stampa lo stato dei personaggi del vincitore
     */
     void checkVincitore(int difensore, int attaccante){
         if(giocatori.get(difensore).getPersonaggi() == null || giocatori.get(difensore).getPersonaggi().isEmpty()){
             System.out.println("Il giocatore " + giocatori.get(difensore).getNome() + " non ha più personaggi e viene eliminato dal gioco.");
             System.out.println("Vince: " + giocatori.get(attaccante).getNome());
             giocatori.remove(difensore);
+            stampaStatus();
         }
     }
 }
