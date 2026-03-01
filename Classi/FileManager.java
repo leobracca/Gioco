@@ -5,7 +5,13 @@ import java.util.*;
  class FileManager {
     String filePersonaggi = "C:\\Users\\lbrac\\OneDrive\\Desktop\\Programmazione casa\\Gioco\\File\\Personaggi.csv";
 
-    /** Lettura file contenente i personaggi */
+    /**
+     * Lettura file contenente i personaggi
+     * 
+     * Lettura di tutto il file contenente i personaggi saltando l'intestazione,
+     * si crea il personaggio con le sue caratteristiche e viene inserito in un
+     * arrayList di tipo Personaggio
+     */
     ArrayList<Personaggio> leggiPersonaggi(ArrayList<Personaggio> personaggi){
         try(BufferedReader br = new BufferedReader(new FileReader(filePersonaggi))){
             String line;
