@@ -2,7 +2,7 @@ package Gioco.Classi;
 
  class zzzAzioniFuture {
     /**
-     * 1. Guardare se tutti i personaggi rispondono alle azioni senza problemi
+     * 1. Fare piu check per vedere lo sviluppo del gioco
      * 2. Aggiungere il punteggio dei giocatori
      *      Se si sconfigge un personaggio si incrementa il punteggio del giocatore di 1
      * 3. Aggiungere un file dove abbiamo una match history della partita
