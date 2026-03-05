@@ -5,6 +5,7 @@ import java.util.*;
     ArrayList<Personaggio> personaggi = new ArrayList<>();
     String nome;
     boolean elimina = false;
+    int punteggio = 0;
 
      Giocatore(String nome) {
         this.nome = nome;
@@ -22,6 +23,10 @@ import java.util.*;
         return personaggi.get(0).getDanni();
     }
 
+    int getPunteggio() {
+        return punteggio;
+    }
+
     /** 
      * Aggiorna la vita del personaggio difensore 
      * 
@@ -29,6 +34,10 @@ import java.util.*;
     */
     void setVitaPersonaggio(int danni){
         personaggi.get(0).setVita(danni);
+    }
+
+    void setPunteggio(int addPunteggio){
+        punteggio += addPunteggio;
     }
 
     /** 
@@ -54,10 +63,13 @@ import java.util.*;
      * Se la vita del personaggio difensore è minore o ugguale a 0 si elimina
      * il personaggio dal giocatore dato che è stato sconfitto
      */
-    void checkPersonaggi(){
+    boolean checkPersonaggi(){
+        boolean controllo = false;
         if(personaggi.get(0).getVita() <= 0){
             personaggi.remove(0);
+            controllo = true;
         }
+        return controllo;
     }
 
     /** 

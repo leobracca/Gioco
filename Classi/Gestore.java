@@ -105,10 +105,18 @@ import java.util.*;
      * il suo personaggio è stato sconfitto e se l' attaccante ha vinto
      */
     private void eseguiAttacco(int att, int dif) {
+        boolean check = false;
         int danni = giocatori.get(att).combatti();
         giocatori.get(dif).setVitaPersonaggio(danni);
-        giocatori.get(dif).checkPersonaggi();
+        check = giocatori.get(dif).checkPersonaggi();
+        cambiaPunteggio(check, att);
         checkVincitore(dif, att);
+    }
+
+    void cambiaPunteggio(boolean check, int att) {
+        if (check == true) {
+            giocatori.get(att).setPunteggio(1);
+        }
     }
 
     /** 
@@ -124,6 +132,8 @@ import java.util.*;
             System.out.println("Risultato finale:");
             System.out.println("Il giocatore " + giocatori.get(difensore).getNome() + " non ha più personaggi e viene eliminato dal gioco.");
             System.out.println("Vince: " + giocatori.get(attaccante).getNome());
+            System.out.println("Punti perdente: " + giocatori.get(difensore).getPunteggio());
+            System.out.println("Punti vinto: " + giocatori.get(attaccante).getPunteggio());
             giocatori.remove(difensore);
         }
     }
