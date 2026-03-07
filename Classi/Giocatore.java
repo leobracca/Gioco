@@ -78,9 +78,4 @@ import java.util.*;
      * Stampa i personaggi del giocatore in formato:
      * nome, vita, danni
     */
-    void stampaPersonaggi(){
-        for(Personaggio p : personaggi){
-            System.out.println("{Nome: " + p.getNome() + " vita: " + p.getVita() + " danni: " + p.getDanni() + "}");
-        }
-    }
 }
