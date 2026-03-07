@@ -46,7 +46,7 @@ import java.util.*;
      * arrayList di tipo personaggio
     */
     void caricaPersonaggi(){
-        allPersonaggi = fm.leggiPersonaggi(allPersonaggi);
+        allPersonaggi = fm.personaggi(allPersonaggi);
     }
 
     /** 
@@ -56,9 +56,11 @@ import java.util.*;
      * e vengono salvati i nomi in un array
     */
     void sistemazionePersonaggi(){
-        for(Giocatore g : giocatori){
+        for(int i = 0; i < giocatori.size(); i++){
+            Giocatore g = giocatori.get(i);
             personaggi = im.scegliPersonaggio(g, allPersonaggi);
-            g.assegnaPersonaggio(personaggi, allPersonaggi);   
+            g.assegnaPersonaggio(personaggi, allPersonaggi);
+            fm.componenti(giocatori.get(i).getNome(), giocatori.get(i).getPersonaggi());
         }
     }
 
@@ -116,7 +118,8 @@ import java.util.*;
     void checkVincitore(int difensore, int attaccante){
         if(giocatori.get(difensore).getPersonaggi() == null || giocatori.get(difensore).getPersonaggi().isEmpty()){
             om.stampaVincitore(difensore, attaccante, giocatori);
-            giocatori.remove(difensore);
+            //fm.risultato(difensore, attaccante, giocatori);
+            giocatori.remove(difensore);         
         }
     }
 }
