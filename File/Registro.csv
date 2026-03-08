@@ -1,8 +1,39 @@
+Partita: 1
+Nome: Leo
+{Nome: Guardie vita: 110 danni: 20}
+{Nome: Minatore vita: 100 danni: 20}
+{Nome: Stregone vita: 110 danni: 30}
+
+Nome: Nico
+{Nome: Valchiria vita: 130 danni: 35}
+{Nome: Cavaliere vita: 120 danni: 20}
+{Nome: Fenice vita: 130 danni: 25}
+
+Risultato: 
+Perdente: Leo punti: 2
+Vincitore: Nico punti: 3Partita: 1
 Nome: Leo
 {Nome: Fenice vita: 130 danni: 25}
+{Nome: Arcieri vita: 80 danni: 25}
 {Nome: Pescatore vita: 90 danni: 40}
-{Nome: Cavaliere vita: 120 danni: 20}
+
 Nome: Nico
 {Nome: Goblin vita: 90 danni: 20}
 {Nome: Gigante vita: 150 danni: 40}
-{Nome: Arcieri vita: 80 danni: 25}
+{Nome: Moschettiere vita: 100 danni: 30}
+
+Risultato: 
+Perdente: Leo punti: 2
+Vincitore: Nico punti: 3Partita: 1
+Nome: Leo
+{Nome: Guardie vita: 110 danni: 20}
+{Nome: Stregone vita: 110 danni: 30}
+{Nome: Fenice vita: 130 danni: 25}
+
+Nome: Nico
+{Nome: Principessa vita: 80 danni: 15}
+{Nome: Cacciatore vita: 90 danni: 25}
+
+Risultato: 
+Perdente: Nico punti: 1
+Vincitore: Leo punti: 2

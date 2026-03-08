@@ -10,11 +10,19 @@ class FileManager{
         return allPersonaggi;
     }
 
+    void partita(){
+        fr.nPartita();
+    }
+
     void componenti(String nome, ArrayList<Personaggio> personaggi){
         fr.addComponenti(nome, personaggi);
     }
 
-    void risultato(){
-        fr.addRisultato();
+    void risultato(int difensore, int attaccante, ArrayList<Giocatore> giocatori){
+        fr.addRisultato(difensore, attaccante, giocatori);
+    }
+
+    void pulisciRegistro(){
+        fr.pulisciFile();
     }
 }

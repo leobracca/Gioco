@@ -18,6 +18,7 @@ import java.util.*;
      * ogni giocatore i personaggi scelti, inizia il gioco 
     */
     void impostaGioco(){
+        fm.partita();
         addGiocatore();
         caricaPersonaggi();
         sistemazionePersonaggi();
@@ -118,7 +119,7 @@ import java.util.*;
     void checkVincitore(int difensore, int attaccante){
         if(giocatori.get(difensore).getPersonaggi() == null || giocatori.get(difensore).getPersonaggi().isEmpty()){
             om.stampaVincitore(difensore, attaccante, giocatori);
-            //fm.risultato(difensore, attaccante, giocatori);
+            fm.risultato(difensore, attaccante, giocatori);
             giocatori.remove(difensore);         
         }
     }
