@@ -5,9 +5,12 @@ import java.util.*;
 
 public class FileRegistro {
     String file = "C:\\Users\\lbrac\\OneDrive\\Desktop\\Programmazione casa\\Gioco\\File\\Registro.csv";
-    int nPartita = 1;
+    String contatore = "C:\\Users\\lbrac\\OneDrive\\Desktop\\Programmazione casa\\Gioco\\File\\Contatore.csv";
+    int nPartita;
 
     void nPartita(){
+        leggiContatore();
+
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))){
             bw.append("Partita: " + nPartita);
             bw.newLine();
@@ -16,6 +19,30 @@ public class FileRegistro {
 
         catch(IOException e){
             System.out.println("Errore scrittura partita");
+        }
+    }
+    
+    void leggiContatore(){
+        try(BufferedReader br = new BufferedReader(new FileReader(contatore))){
+            String line;
+            line = br.readLine();
+            nPartita = Integer.parseInt(line) + 1;
+        }
+
+        catch(IOException e){
+            System.out.println("Errore lettura contatore");
+        }
+
+        aggiornaContatore();
+    }
+
+    void aggiornaContatore(){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(contatore))){
+            bw.write(String.valueOf(nPartita++));
+        }
+
+        catch(IOException e){
+            System.out.println("Errore aggiornamento contatore");
         }
     }
     
