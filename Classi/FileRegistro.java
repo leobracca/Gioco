@@ -15,6 +15,8 @@ public class FileRegistro {
             bw.append("Partita: " + nPartita);
             bw.newLine();
             nPartita++;
+
+            aggiornaContatore();
         }
 
         catch(IOException e){
@@ -26,14 +28,12 @@ public class FileRegistro {
         try(BufferedReader br = new BufferedReader(new FileReader(contatore))){
             String line;
             line = br.readLine();
-            nPartita = Integer.parseInt(line) + 1;
+            nPartita = Integer.parseInt(line);
         }
 
         catch(IOException e){
             System.out.println("Errore lettura contatore");
         }
-
-        aggiornaContatore();
     }
 
     void aggiornaContatore(){
